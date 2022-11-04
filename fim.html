@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/responsivo.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    
+    function Login() {
+        var done = 0;
+        var senha = document.getElementsByName('progresso')[0].value;
+        senha = senha.toLowerCase();
+      
+        if (senha == "c") {
+          window.location = "fim.html";
+          done = 1;
+          parent.document.getElementById("but").value = ''; //Limpar o formulário após o envio de senha e usuário corretos 
+        }
+        if (done == 0) {
+          parent.document.getElementById("but").value = ''; //Limpar o formulário após o envio de senha e usuário incorretos 
+          alert("Resposta Errada");
+        }  
+      }
+      history.pushState(null, null, document.URL);  // Script para não permitir que o usuário volte para o menu após retornar para a tela de login
+      window.addEventListener('popstate', function () {
+          history.pushState(null, null, document.URL);
+      });  
+      </script>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="container header-container">
+      <a href="./"><img src="img/logo.jpeg" alt="Blue Heaven" class="log"></a>
+      <button data-menu="hamburguer" aria-controls="menu">Menu</button>
+      <ul data-menu="lista" id="menu">
+        <li><a class="ativo" href="./">Home</a></li>
+        <li><a href="sobre.html">Quiz</a></li>
+        <li><a href="passeios.html">Tópicos</a></li>
+        <li><a href="contato.html">Sobre nós</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div class="end-quiz">
+<h1 style="color: blue;">PARABÉNS!</h1> <br>
+<h3>Você finalizou o quiz!</h3> <br><br>
+<a href="index.html"><button class="final">Voltar ao Inicio</button></a>
+ </div>
+</section>
+  <script src="./js/script.js" type="module"></script>
+</body>
+
+</html>
